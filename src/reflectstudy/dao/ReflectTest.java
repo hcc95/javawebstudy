@@ -31,6 +31,18 @@ public class ReflectTest {
 		return (Class) params[index];
 	}
 	
+	
+	/**
+	 * 通过反射，获取Class的父类的第一个泛型参数类型
+	 * @param clazz
+	 * @return
+	 */
+	@SuppressWarnings("unhecked")
+	public static<T> Class<T> getSuperGenericType(Class clazz){
+		
+		return getSuperClassGenericType(clazz,0);	
+	}
+	
 	@Test
 	public void testgetSuperClassGenericType(){
 		Class clazz=EmployeeDao.class;
