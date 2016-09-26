@@ -9,7 +9,7 @@ public class JoinThread extends Thread {
 			System.out.println(Thread.currentThread().getName()+":"+i);			
 			try {
 				if(i==10){
-					thread.join();//让出执行权限
+					thread.join();//让出执行权限 并停止线程
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
