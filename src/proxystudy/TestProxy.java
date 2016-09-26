@@ -13,7 +13,12 @@ public class TestProxy {
 	/**
 	 * 
 	 * 动态代理
-	 * 
+	 * 1 需要一个被代理对象
+	 * 2 类加载器通常是和被代理对象使用相同的类加载器
+	 * 3 一般的 Proxy.newProxyInstance返回值是被代理对象的接口类型
+	 * 当然也可以是其他的接口类型
+	 * 第二参数，必须是一个接口类型的数组
+	 * 4 InvocationHandler通常使用匿名内部类的方式
 	 */
 	@Test
 	public void testProxy(){
