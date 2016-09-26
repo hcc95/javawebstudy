@@ -18,6 +18,8 @@ public class TestProxy {
 	 * 3 一般的 Proxy.newProxyInstance返回值是被代理对象的接口类型
 	 * 当然也可以是其他的接口类型
 	 * 第二参数，必须是一个接口类型的数组
+	 * 若代理对象不需要额外的实现被代理对象实现的接口以外的接口
+	 * 可以使用Proxy.getClass().getInterface()
 	 * 4 InvocationHandler通常使用匿名内部类的方式
 	 */
 	@Test
@@ -28,6 +30,7 @@ public class TestProxy {
 		  * ClassLoader 有动态代理产生的对象由哪个类加载器来加载
 		  * 通常情况下和被代理的对象使用一样的类加载器
 		  * Class<?>[]：由动态代理产生的对象必须需要实现的接口的数组
+		  * 
 		  * InvocationHandler ：具体调用代理对象的方法时，讲产生什么行为
 		  */
 		 ArithmeticCalculator proxy=(ArithmeticCalculator)Proxy
