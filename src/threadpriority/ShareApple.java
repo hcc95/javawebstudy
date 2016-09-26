@@ -1,5 +1,11 @@
 package threadpriority;
 
+/**
+ * 线程不安全  多个线程访问一个共享的资源
+ * 使用synchronize 代码块解决安全问题
+ * @author hucha
+ *
+ */
 public class ShareApple implements Runnable {
 
 	public static void main(String[] args) {
@@ -21,21 +27,21 @@ public class ShareApple implements Runnable {
 	boolean getApple(){
 		
 		synchronized(this){
-			
-		}
-		 if(appleCount>0){
-			 appleCount--;
-			 try {
-				// TODO Auto-generated catch block
-				Thread.sleep(1000);  //造成线程安全问题
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			 System.out.println(Thread.currentThread()
-					 .getName()+"拿了一个苹果"+"还剩下"+appleCount+"个苹果");
-			 return true;
-		 }
+			if(appleCount>0){
+				 appleCount--;
+				 try {
+					// TODO Auto-generated catch block
+					Thread.sleep(1000);  //造成线程安全问题
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				 System.out.println(Thread.currentThread()
+						 .getName()+"拿了一个苹果"+"还剩下"+appleCount+"个苹果");
+				 return true;
+			 }
+		}//线程同步 共享同一个参数
+		 
 		
 		
 		return false;
