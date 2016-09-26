@@ -25,7 +25,7 @@ public class TestProxy {
 	@Test
 	public void testProxy(){
 		 
-		 ArithmeticCalculator arithmeticCalculator=new ArithmeticCalculatorImpl();
+		final ArithmeticCalculator arithmeticCalculator=new ArithmeticCalculatorImpl();
 		 /**
 		  * ClassLoader 有动态代理产生的对象由哪个类加载器来加载
 		  * 通常情况下和被代理的对象使用一样的类加载器
