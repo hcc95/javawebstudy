@@ -15,10 +15,15 @@ public class Person {
 	public void setAge(int age) {
 		this.age = age;
 	}
+<<<<<<< HEAD
 	public Person(){
 		
 	}
 	public Person(String name, int age) {
+=======
+	public Person(String name, int age) {
+		super();
+>>>>>>> branch 'master' of https://github.com/hcc95/javawebstudy.git
 		this.name = name;
 		this.age = age;
 	}
