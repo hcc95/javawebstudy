@@ -26,7 +26,7 @@ public class ShareApple implements Runnable {
 	 */
 	boolean getApple(){
 		
-		synchronized(this){
+		synchronized(this){ //this 表示一个共同的参照
 			if(appleCount>0){
 				 appleCount--;
 				 try {
