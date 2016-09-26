@@ -42,7 +42,6 @@ public class TicketHouse implements Runnable {
 		buy();
 
 	}
-
 	public static void main(String[] args) {
 		Runnable r=new TicketHouse();
 		Thread t1=new Thread(r);

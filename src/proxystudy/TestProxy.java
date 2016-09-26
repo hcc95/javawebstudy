@@ -8,8 +8,6 @@ import java.util.Arrays;
 import org.junit.Test;
 
 public class TestProxy {
-	
-	
 	/**
 	 * 
 	 * 动态代理
