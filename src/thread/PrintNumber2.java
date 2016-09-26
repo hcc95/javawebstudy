@@ -16,7 +16,7 @@ public class PrintNumber2 {
 }
 class NumberThread2 extends Thread{
 	
-	 PrintNumber2 printNumber;
+	 PrintNumber2 printNumber;//让两个thread共享一个i
 	public NumberThread2(String name ,PrintNumber2 printNumber){
 		super(name);
 		this.printNumber=printNumber;

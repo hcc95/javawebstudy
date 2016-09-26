@@ -1,5 +1,10 @@
 package thread;
 
+/**
+ * 
+ * @author huchaochao
+ *
+ */
 public class MyRunnable implements Runnable{
 	@Override
 	public void run(){
