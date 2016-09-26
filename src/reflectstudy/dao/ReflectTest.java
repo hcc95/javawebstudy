@@ -37,7 +37,7 @@ public class ReflectTest {
 	 * @param clazz
 	 * @return
 	 */
-	@SuppressWarnings("unhecked")
+	@SuppressWarnings("unchecked")
 	public static<T> Class<T> getSuperGenericType(Class clazz){
 		
 		return getSuperClassGenericType(clazz,0);	
