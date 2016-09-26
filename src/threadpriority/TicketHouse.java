@@ -36,7 +36,7 @@ public class TicketHouse implements Runnable {
 		if(fiveCount==3){
 			notifyAll();
 		}
-	}
+}
 	@Override
 	public void run() {
 		buy();
