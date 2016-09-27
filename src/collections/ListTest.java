@@ -21,8 +21,7 @@ public class ListTest {
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testArrayList(){
-		List list=new ArrayList();
-		
+		List list=new ArrayList();	
 		//List 和map与set的不同就是 即使person实现了equals方法 任然可以添加重复的元素
 		list.add(new Person("AA",12));
 		list.add(new Person("AA",12));
