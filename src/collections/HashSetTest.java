@@ -28,7 +28,7 @@ public class HashSetTest {
 		Person p1=new Person("hcc",12);
 		Person p2=new Person("hcc",12);
 		//Person p3=new Person("hcc3",12);
-		//TODO flase问题 Person 要重写equals方法吗？
+		//TODO flase问题 Person 要重写equals方法
 		System.out.println(p1.equals(p2));
 		System.out.println(p2.equals(p1));
 		set.add(p1);

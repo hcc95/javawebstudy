@@ -1,6 +1,10 @@
 package collections;
-
-public class Person {
+/**
+ * person 此时是内部排序
+ * @author huchaochao
+ *
+ */
+public class Person implements Comparable {
 	private String name;
 	private int age;
 	public String getName() {
@@ -24,6 +28,43 @@ public class Person {
 	@Override
 	public String toString() {
 		return "Person [name=" + name + ", age=" + age + "]";
+	}
+	@Override
+	public int compareTo(Object o) {
+		if(o instanceof Person){
+			Person person=(Person) o;
+//			return this.name.compareTo(person.name);
+			//return this.age-person.age;
+			return -this.age+person.age;
+		}else{
+			throw new RuntimeException("不能转为person");
+		}
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + age;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Person other = (Person) obj;
+		if (age != other.age)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
 	}
 	
 }
