@@ -41,7 +41,6 @@ public class CollectionsTest {
 		
 		//2  实现排序
 		Collections.sort(list3,new Comparator(){
-
 			@Override//按年龄生序排列
 			public int compare(Object o1, Object o2) {
 				if(o1 instanceof Person1 && o2 instanceof Person1){
@@ -52,8 +51,7 @@ public class CollectionsTest {
 					return p1.getAge()-p2.getAge();
 				}
 				throw new ClassCastException("error");
-			}
-			
+			}			
 		});
 		
 		for(Object obj:list3){
