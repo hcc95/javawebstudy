@@ -22,8 +22,11 @@ public class ListTest {
 	@Test
 	public void testArrayList(){
 		List list=new ArrayList();
+<<<<<<< HEAD
 		
 		//List 和map与set的不同就是 即使person实现了equals方法 任然可以添加重复的元素
+=======
+>>>>>>> branch 'master' of https://github.com/hcc95/javawebstudy.git
 		list.add(new Person("AA",12));
 		list.add(new Person("AA",12));
 		list.add(new Person("AA",12));
