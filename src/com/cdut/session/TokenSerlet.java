@@ -76,8 +76,8 @@ public class TokenSerlet extends HttpServlet {
 		HttpSession session=request.getSession();
 		Object token=session.getAttribute("token");
 		String tokenvalue=request.getParameter("token");
-		System.out.println(token);
-		System.out.println(tokenvalue);
+		/*System.out.println(token);
+		System.out.println(tokenvalue);*/
 		if(token!=null && token.equals(tokenvalue)){
 			session.removeAttribute("token");
 		}else{
