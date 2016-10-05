@@ -4,9 +4,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class TokenSerlet extends HttpServlet {
 
@@ -65,11 +67,27 @@ public class TokenSerlet extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+	
+		/*	
+		String token=request.getParameter("token");
+		if("hcc"==token){
+			//没有方法清除请求参数
+		}*/
+		HttpSession session=request.getSession();
+		Object token=session.getAttribute("token");
+		String tokenvalue=request.getParameter("token");
+		System.out.println(token);
+		System.out.println(tokenvalue);
+		if(token!=null && token.equals(tokenvalue)){
+			session.removeAttribute("token");
+		}else{
+			response.sendRedirect(request.getContextPath()+"/token/sucess.jsp");
+		}
 		String name=request.getParameter("name");
 		System.out.println("name:"+name);
 		
-		request.getRequestDispatcher("/token/sucess.jsp").forward(request, response);
+		//request.getRequestDispatcher("/token/sucess.jsp").forward(request, response);
+		response.sendRedirect(request.getContextPath()+"/token/sucess.jsp");
 	}
 
 	/**

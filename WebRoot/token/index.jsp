@@ -23,7 +23,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  
+  <% String tokenValue=new Date().getTime()+"";%>
    <form action="<%= request.getContextPath() %>/TokenSerlet" method="post">
+   	 <input type="hidden" name="token" value="<%= tokenValue %>"/>
+   	<%
+   		session.setAttribute("token",tokenValue);
+   	
+   	 %>
    	name:
    	<input type="text" name="name"/>
    	
