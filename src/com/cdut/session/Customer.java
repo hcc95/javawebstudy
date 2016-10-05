@@ -29,8 +29,7 @@ public class Customer {
 		this.cardType = cardType;
 	}
 	public Customer() {
-		super();
-		// TODO Auto-generated constructor stub
+		System.out.println("无参构造器");
 	}
 	
 }
