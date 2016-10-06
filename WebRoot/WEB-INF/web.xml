@@ -44,10 +44,9 @@
     <filter-name>UserNameFilter</filter-name>
     <filter-class>com.cdut.filter.UserNameFilter</filter-class>
     <init-param>
-   		<param-name>name</param-name>
+   		<param-name>username</param-name>
    		<param-value>root</param-value>
     </init-param>
-
   </filter>
   <filter>
     <filter-name>PasswordFilter</filter-name>
@@ -69,6 +68,6 @@
   </filter-mapping>
   <filter-mapping>
     <filter-name>PasswordFilter</filter-name>
-    <url-pattern>/filter/test.jsp</url-pattern>
+    <url-pattern>/filter/hello.jsp</url-pattern>
   </filter-mapping>
 </web-app>
