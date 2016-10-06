@@ -25,10 +25,10 @@ public class UserNameFilter implements Filter {
 		System.out.println(initUser);
 		String username=request.getParameter("username");
 		System.out.println(username);
-		/*if(!initUser.equals(username)){
+		if(!initUser.equals(username)){
 			request.setAttribute("message", "用户名不正确");
 			request.getRequestDispatcher("/filter/login.jsp").forward(request, response);;
-		}*/
+		}
 		chain.doFilter(request, response);
 	}
 

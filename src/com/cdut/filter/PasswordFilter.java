@@ -28,7 +28,7 @@ public class PasswordFilter implements Filter {
 		String initPassword=filterConfig.getInitParameter("password");
 		String password=request.getParameter("password");
 		if(!initPassword.equals(password)){
-			request.setAttribute("message", "用户名不正确");
+			request.setAttribute("message", "密码不正确");
 			request.getRequestDispatcher("/filter/login.jsp").forward(request, response);;
 		}
 		chain.doFilter(request, response);

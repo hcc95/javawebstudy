@@ -53,7 +53,7 @@
     <filter-class>com.cdut.filter.PasswordFilter</filter-class>
   </filter>
   
-  
+ <!-- filter的过滤顺序跟这里的映射位置有关 -->
   <filter-mapping>
     <filter-name>hellofilter</filter-name>
     <url-pattern>/filter/test.jsp</url-pattern>
