@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="3.0"
-    xmlns="http://java.sun.com/xml/ns/javaee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  
+  <context-param>
+  		<param-name>password</param-name>
+  		<param-value>1234</param-value>
+  </context-param>
+  
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
@@ -17,16 +20,6 @@
     <servlet-name>TokenSerlet</servlet-name>
     <servlet-class>com.cdut.session.TokenSerlet</servlet-class>
   </servlet>
-	<!-- 注册filter -->
-  <filter>
-  	<filter-name>hellofilter</filter-name>
-  	<filter-class>com.cdut.filter.Hellofilter</filter-class>
-  </filter>
-  <filter>
-  	<filter-name>secondfilter</filter-name>
-  	<filter-class>com.cdut.filter.Secondfilter</filter-class>
-  </filter>
-
   <servlet-mapping>
     <servlet-name>ProcessStep1</servlet-name>
     <url-pattern>/ProcessStep1</url-pattern>
@@ -39,14 +32,43 @@
     <servlet-name>TokenSerlet</servlet-name>
     <url-pattern>/TokenSerlet</url-pattern>
   </servlet-mapping>
-  	<!-- 映射filter -->
-  <filter-mapping>
-  	<filter-name>hellofilter</filter-name>
-  	<url-pattern>/filter/test.jsp</url-pattern>
-  </filter-mapping>
-  <filter-mapping>
-  	<filter-name>secondfilter</filter-name>
-  	<url-pattern>/filter/test.jsp</url-pattern>
-  </filter-mapping>
+  <filter>
+    <filter-name>hellofilter</filter-name>
+    <filter-class>com.cdut.filter.Hellofilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>secondfilter</filter-name>
+    <filter-class>com.cdut.filter.Secondfilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>UserNameFilter</filter-name>
+    <filter-class>com.cdut.filter.UserNameFilter</filter-class>
+    <init-param>
+   		<param-name>name</param-name>
+   		<param-value>root</param-value>
+    </init-param>
 
+  </filter>
+  <filter>
+    <filter-name>PasswordFilter</filter-name>
+    <filter-class>com.cdut.filter.PasswordFilter</filter-class>
+  </filter>
+  
+  
+  <filter-mapping>
+    <filter-name>hellofilter</filter-name>
+    <url-pattern>/filter/test.jsp</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>secondfilter</filter-name>
+    <url-pattern>/filter/test.jsp</url-pattern>
+  </filter-mapping>
+   <filter-mapping>
+    <filter-name>UserNameFilter</filter-name>
+    <url-pattern>/filter/hello.jsp</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>PasswordFilter</filter-name>
+    <url-pattern>/filter/test.jsp</url-pattern>
+  </filter-mapping>
 </web-app>
