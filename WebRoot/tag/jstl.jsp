@@ -61,5 +61,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <br>
    <c:set var="subject" value="{$param.subject}" scope="session"></c:set>
    subject:${sessionScope.subject}
+   
+   <br>
+   <br>
+   
+   <c:set var="age" value="20" scope="page"></c:set>
+   age: ${pageScope.age}
+  <%--  <c:if  test="${requestScope.age}>18">成年了</c:if> --%>
+   <c:choose>
+   		<c:when>
+   		</c:when>
+   </c:choose>
   </body>
 </html>
