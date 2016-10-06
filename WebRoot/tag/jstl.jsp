@@ -67,10 +67,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    
    <c:set var="age" value="20" scope="page"></c:set>
    age: ${pageScope.age}
-  <%--  <c:if  test="${requestScope.age}>18">成年了</c:if> --%>
+  <%--  <c:if  test="${requestScope.age}>18">成年了</c:if>  c:if没有else语句--%>
    <c:choose>
-   		<c:when>
+   		<c:when test="">
    		</c:when>
+   		<c:when test="">
+   		</c:when>
+   		<c:when test="">
+   		</c:when>
+   		<c:otherwise>
+   		</c:otherwise>
    </c:choose>
   </body>
 </html>
